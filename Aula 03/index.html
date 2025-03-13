@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>AULA 4</h1>
+    <h4>STYLE COM JS</h4>
+
+    <div class="msg_geral esconder">
+    </div>
+    <fieldset>
+    <label for="nome">Nome:
+    <input type="text" name="nome" id="nome" placeholder="nome completo"  class="inputs">
+    </label>
+    <br>
+    <br>
+    <label for="idade">Idade:
+    <input type="number" name="idade" id="idade" placeholder="idade"  class="inputs">
+    </label>
+    <br>
+    <br>
+    <label for="cpf">CPF:
+    <input type="text" name="cpf" id="cpf" placeholder="cpf" class="inputs">
+    </label>
+    <br>
+    
+    <br>
+    <button type="button" id="bot">validar</button>
+    <hr>
+    <section>
+        <div id="div1">
+            <label for="nome2">Nome:
+                <input type="text" name="nome2" id="nome2">
+            </label>
+            <select id="selecionar">
+                <option value="">Selecione uma opção</option>
+                <option value="fisico">Físico</option>
+                <option value="juridico">Jurídico</option>
+            </select>
+            <button id="next">Próximo</button>
+            <p id="aviso-erro"></p>
+        </div>
+        <hr>
+        <div class="fisicoCadastro esconder">
+            <label for="cpfF">CPF:
+                <input type="text" name="cpfF" id="cpfF">
+            </label>
+            <label for="rg">RG:
+                <input type="text" name="rg" id="rg">
+            </label>
+            <label for="idadeFisico">Idade:
+                <input type="number" name="idadeFisico" id="idadeFisico">
+            </label>
+            <button id="gravarFisico">Gravar</button>
+            <p id="mensagemFisico"></p>
+        </div>
+        <div class="juridicoCadastro esconder">
+            <label for="cnpj">CNPJ:
+                <input type="text" name="cnpj" id="cnpj">
+            </label>
+            <label for="ie">IE:
+                <input type="number" name="ie" id="ie">
+            </label>
+            <label for="fantasia">Nome Fantasia:
+                <input type="text" name="fantasia" id="fantasia">
+            </label>
+            <button id="gravarJuridico">Gravar</button>
+            <p id="mensagemJuridico"></p>
+        </div>
+       
+    </section>
+</fieldset>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.esconder{
+    display: none !important;
+}
+.exibir{
+    display: block;
+}
+
+.msg_geral{
+    color: red;
+    font-size: 15px;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 3px;
+
+}
+
+body{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#div1, .fisicoCadastro, .juridicoCadastro{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+#bot{
+   width: 100%;
+}
+
