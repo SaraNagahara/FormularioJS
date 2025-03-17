@@ -43,7 +43,7 @@
                 <option value="juridico">Jurídico</option>
             </select>
             <button id="next">Próximo</button>
-            <p id="aviso-erro"></p>
+            <p id="aviso-erro"  class="msg_botao esconder"></p>
         </div>
         <hr>
         <div class="fisicoCadastro esconder">
@@ -57,7 +57,7 @@
                 <input type="number" name="idadeFisico" id="idadeFisico">
             </label>
             <button id="gravarFisico">Gravar</button>
-            <p id="mensagemFisico"></p>
+            <p id="mensagemFisico" class="msg_botao esconder"></p>
         </div>
         <div class="juridicoCadastro esconder">
             <label for="cnpj">CNPJ:
@@ -69,8 +69,10 @@
             <label for="fantasia">Nome Fantasia:
                 <input type="text" name="fantasia" id="fantasia">
             </label>
+            <div>
             <button id="gravarJuridico">Gravar</button>
-            <p id="mensagemJuridico"></p>
+            </div>
+            <p id="mensagemJuridico" class="msg_botao esconder"></p>
         </div>
        
     </section>

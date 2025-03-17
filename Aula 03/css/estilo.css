@@ -36,3 +36,13 @@ body{
    width: 100%;
 }
 
+.msg_botao{
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+button{
+    width: 100%;
+}
+

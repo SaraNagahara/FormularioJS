@@ -8,6 +8,8 @@ var msg_geral = document.getElementsByClassName('msg_geral')[0];
 
 botao.addEventListener("click", function(){
 
+    let erro = false; //Validação para que só apareca a mensagem de sucesso se todos os erros forem false
+
     msg_geral.textContent = '';
 
    if(nome.value.length === 0 || nome.value.length <= 3){
@@ -18,10 +20,8 @@ botao.addEventListener("click", function(){
         nome.style.border = '2px solid red';
        nome.style.backgroundColor = 'red';
        msg_geral.innerHTML +='nome não informado ou fora do padrão! <br>  ' 
+       erro = true;
      
-   }else{
-    nome.style.backgroundColor = 'none';
-    nome.style.border = '2px solid green';
    }
    
    if(idade.value.length === 0 || idade.value < 18 || idade.value >= 60){
@@ -32,9 +32,7 @@ botao.addEventListener("click", function(){
     
     msg_geral.classList.remove('esconder');
     msg_geral.classList.add('exibir');
-   }else{
-    idade.style.backgroundColor = 'none';
-    idade.style.border = '2px solid green';
+    erro = true;
    }
 
    let cpfcorrige = cpf.value;
@@ -50,9 +48,10 @@ botao.addEventListener("click", function(){
     
      msg_geral.classList.remove('esconder');
      msg_geral.classList.add('exibir');
+     erro = true;
    }
 
-   else{
+   if(!erro){
     msg_geral.style.color = 'green';
     msg_geral.textContent ='Sucesso!!'
    
@@ -68,7 +67,7 @@ botao.addEventListener("click", function(){
 /* Aqui começa a segunda parte do codigo */
 
 var next = document.getElementById("next");
-
+var msg_botao1 = document.getElementsByClassName("msg_botao")[0];
 
 
 next.addEventListener('click', function(){
@@ -80,11 +79,12 @@ next.addEventListener('click', function(){
     var juridicoCadastro = document.getElementsByClassName("juridicoCadastro")[0]; 
     
     if(nome2.length == 0){
+        msg_botao1.classList.remove("esconder");
+        msg_botao1.classList.add("exibir");
         aviso.textContent = '';
         aviso.style.color = "red";
         aviso.textContent += "Preencha o nome";
     }
-
 
      if(tipo === "fisico" && tipo != '' && nome2.length != 0){
         mensagemFisico.textContent = '';
@@ -92,6 +92,14 @@ next.addEventListener('click', function(){
         msgJuridico.textContent = '';
       
         aviso.textContent = '';
+
+        msg_botao1.classList.remove("exibir");
+        msg_botao1.classList.add("esconder");
+
+        msg_botao.classList.remove("exibir");
+        msg_botao.classList.add('esconder');
+        msg_botao2.classList.remove("exibir");
+        msg_botao2.classList.add('esconder');
 
         juridicoCadastro.classList.remove("exibir");
 
@@ -107,6 +115,14 @@ next.addEventListener('click', function(){
         msgJuridico.textContent = '';
 
         aviso.textContent = '';
+
+        msg_botao1.classList.remove("exibir");
+        msg_botao1.classList.add("esconder");
+        
+        msg_botao.classList.remove("exibir");
+        msg_botao.classList.add('esconder');
+        msg_botao2.classList.remove("exibir");
+        msg_botao2.classList.add('esconder');
 
         fisicoCadastro.classList.remove("exibir");
 
@@ -128,7 +144,7 @@ next.addEventListener('click', function(){
 
 //Física
 
-
+var msg_botao = document.getElementsByClassName("msg_botao")[1];
 var gravarFisico = document.getElementById("gravarFisico");
 
 var rg = document.getElementById("rg");
@@ -146,6 +162,8 @@ gravarFisico.addEventListener('click', function(){
    cpfFisicoCorrigido = cpfFisicoCorrigido.replaceAll('-', '');
 
     if(cpfFisicoCorrigido.length == 0 || cpfFisicoCorrigido.length !== 11 || isNaN(cpfFisicoCorrigido)){
+        msg_botao.classList.remove("esconder");
+        msg_botao.classList.add('exibir');
         mensagemFisico.style.color = "red";
         mensagemFisico.innerHTML += "Preencha com o cpf corretamente! <br>";
         erro = true;
@@ -153,18 +171,24 @@ gravarFisico.addEventListener('click', function(){
 
 
    if(rg.value.length == 0 || rg.value.length != 10){
+        msg_botao.classList.remove("esconder");
+        msg_botao.classList.add('exibir');
         mensagemFisico.style.color = "red";
         mensagemFisico.innerHTML += "Preencha com o RG corretamente! <br>";
         erro = true;
     }
 
     if(idadeFisico.value.length == 0 || idadeFisico.value < 18){
+        msg_botao.classList.remove("esconder");
+        msg_botao.classList.add('exibir');
         mensagemFisico.style.color = "red";
         mensagemFisico.innerHTML += "Preencha com a idade <br>";
         erro = true;
     }
 
     if(!erro){
+        msg_botao.classList.remove("esconder");
+        msg_botao.classList.add('exibir');
         mensagemFisico.style.color = "green";
         mensagemFisico.innerHTML = "Sucesso!!";
     }
@@ -172,7 +196,7 @@ gravarFisico.addEventListener('click', function(){
 });
 
 // Jurídica
-
+var msg_botao2 = document.getElementsByClassName("msg_botao")[2];
 var gravarJuridico = document.getElementById("gravarJuridico");
 var msgJuridico = document.getElementById("mensagemJuridico");
 var cnpjcorrigir = document.getElementById("cnpj");
@@ -180,6 +204,7 @@ var ie = document.getElementById("ie");
 var nomeFantasia = document.getElementById("fantasia");
 
 gravarJuridico.addEventListener('click', function(){
+    
     msgJuridico.textContent = '';
 
     let erro = false;
@@ -189,28 +214,33 @@ gravarJuridico.addEventListener('click', function(){
     cnpj = cnpj.replaceAll("-", '');
     cnpj = cnpj.replaceAll("/", '');
 
-    console.log(cnpj)
-
-
     if(cnpj.length == 0 || cnpj.length !== 14 || isNaN(cnpj)){
+        msg_botao2.classList.remove("esconder");
+        msg_botao2.classList.add('exibir');
         msgJuridico.style.color = "red";
         mensagemJuridico.innerHTML += "Preencha o CNPJ corretamente! <br>"
         erro = true;
     }
 
     if(ie.value.length == 0 || ie.value.length !== 12){
+        msg_botao2.classList.remove("esconder");
+        msg_botao2.classList.add('exibir');
         msgJuridico.style.color = "red";
         mensagemJuridico.innerHTML += "Preencha com o IE corretamente! <br>"
         erro = true;
     }
 
     if(nomeFantasia.value.length == 0){
+        msg_botao2.classList.remove("esconder");
+        msg_botao2.classList.add('exibir');
         msgJuridico.style.color = "red";
         mensagemJuridico.innerHTML += "Preencha com o nome do estabelecimento! <br>"
         erro = true;
     }
 
     if(!erro){
+        msg_botao2.classList.remove("esconder");
+        msg_botao2.classList.add('exibir');
         msgJuridico.style.color = "green";
         mensagemJuridico.textContent += "Sucesso!!"
     }
