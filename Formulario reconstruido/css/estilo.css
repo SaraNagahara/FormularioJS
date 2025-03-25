@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+
+header{
+    width: 100%;
+    height: 5%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    font-family: "Caveat", cursive !important;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #f7f7f7;
+   
+}
+
+nav, footer, ul{
+    background-color: #2DAA9E;
+    color: white;
+    border-radius: 10px;
+}
+
+a{
+    color: white !important;
+}
+
+a:hover{
+    color: #EAEAEA !important;
+}
+
+.imagemheading{
+    width: 100%;
+}
+
+
+.esconder{
+    display: none !important;
+}
+.exibir{
+    display: block;
+}
+
+.msg_geral{
+    color: red;
+    font-size: 15px;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 3px;
+
+}
+
+body{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#div1, .fisicoCadastro, .juridicoCadastro{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+#bot{
+   width: 100%;
+}
+
+.msg_botao, .msg_botaoJuridico, .msg_botaoFisico{
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+button{
+    width: 100%;
+}
+
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lilita+One&family=Outfit:wght@100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Formulário JavaScript</title>
+</head>
+<body>
+        <div class="container">
+            <h1>Formulário</h1>
+            <div class="msg_geral esconder"></div>
+            <fieldset>
+                <label for="nome">Nome:
+                    <input type="text" name="nome" id="nome" placeholder="Nome completo" class="u-full-width">
+                </label>
+                <label for="idade">Idade:
+                    <input type="number" name="idade" id="idade" placeholder="Idade" class="u-full-width">
+                </label>
+                <label for="cpf">CPF:
+                    <input type="text" name="cpf" id="cpf" placeholder="CPF" class="u-full-width">
+                </label>
+                <button type="button" id="bot" class="button-primary">Validar</button>
+            </fieldset>
+            <hr>
+            <section>
+                <div id="div1">
+                    <label for="nome2">Nome:
+                        <input type="text" name="nome2" id="nome2" class="u-full-width">
+                    </label>
+                    <select id="selecionar" class="u-full-width">
+                        <option value="">Selecione uma opção</option>
+                        <option value="fisico">Físico</option>
+                        <option value="juridico">Jurídico</option>
+                    </select>
+                    <button id="next" class="button">Próximo</button>
+                    <p id="aviso-erro" class="msg_botao esconder"></p>
+                </div>
+                <hr>
+                <div class="fisicoCadastro esconder">
+                    <div class="msg_botaoFisico esconder"></div>
+                    <label for="cpfF">CPF:
+                        <input type="text" name="cpfF" id="cpfF" class="u-full-width">
+                    </label>
+                    <label for="rg">RG:
+                        <input type="text" name="rg" id="rg" class="u-full-width">
+                    </label>
+                    <label for="idadeFisico">Idade:
+                        <input type="number" name="idadeFisico" id="idadeFisico" class="u-full-width">
+                    </label>
+                    <button id="gravarFisico" class="button-primary">Gravar</button>
+                    
+                </div>
+                <div class="juridicoCadastro esconder">
+                    <div class="msg_botaoJuridico esconder"></div>
+                    <label for="cnpj">CNPJ:
+                        <input type="text" name="cnpj" id="cnpj" class="u-full-width">
+                    </label>
+                    <label for="ie">IE:
+                        <input type="text" name="ie" id="ie" class="u-full-width">
+                    </label>
+                    <label for="fantasia">Nome Fantasia:
+                        <input type="text" name="fantasia" id="fantasia" class="u-full-width">
+                    </label>
+                    <button id="gravarJuridico" class="button-primary">Gravar</button>
+                    
+                </div>
+            </section>
+        </div>
+<script src="app.js"></script> 
+</body>
+</html>
